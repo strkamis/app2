@@ -19,10 +19,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     //this.ofertas = this.ofertasService.getOfertas()
+
   this.ofertasService.getOfertas2()//ele não retorna mais em array de ofertas e sim uma promessa 
-    .then(( ofertas: Oferta[])=>{
-      this.ofertas = ofertas
-    })// retorna o resolve de ofertas.service.ts
+    .then(
+      ( ofertas: Oferta[])=> { 
+        this.ofertas = ofertas
+      
+      })// retorna o resolve de ofertas.service.ts
+      
+      .catch((param: any) => {console.log(param)
+      
+      
+      })
 
   }
 }

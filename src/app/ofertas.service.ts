@@ -61,9 +61,27 @@ public getOfertas(): Array<Oferta>{
     return this.ofertas
     }
     public getOfertas2(): Promise<Oferta[]>{
-        return new Promise((resolve, reject) => {
+        return new Promise ((resolve, reject) => {
             // algum tipo de processamento, que ao finalizar chama a função resolve ou a função reject
-            resolve(this.ofertas) 
+            let deucerto = true
+            if (deucerto) {
+
+            setTimeout(() => resolve(this.ofertas), 3000)
+            resolve (this.ofertas)}
+
+            else{ 
+            reject({ codigo_erro:404, mensagem_erro: 'Servior não encontrado ' }) // caso for reseitado 
+            }
         }) //isso é uma função de call back
+        .then(( ofertas: Oferta[]) => {
+            //fazer alguma tratativa
+            
+            return ofertas   
+        })
+        .then(( ofertas: Oferta[]) => {
+            //segundo then
+            
+            return ofertas   
+        })
     }
 }
