@@ -18,7 +18,11 @@ export class HomeComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    this.ofertas = this.ofertasService.getOfertas()
-  
+    //this.ofertas = this.ofertasService.getOfertas()
+  this.ofertasService.getOfertas2()//ele não retorna mais em array de ofertas e sim uma promessa 
+    .then(( ofertas: Oferta[])=>{
+      this.ofertas = ofertas
+    })// retorna o resolve de ofertas.service.ts
+
   }
 }
