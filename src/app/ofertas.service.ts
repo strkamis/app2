@@ -1,5 +1,6 @@
 import{ Oferta} from './shared/oferta.model'
 import { promise } from 'protractor'
+import { resolve } from 'q'
 
 export class OfertasService{
 
@@ -81,7 +82,13 @@ public getOfertas(): Array<Oferta>{
         .then(( ofertas: Oferta[]) => {
             //segundo then
             
-            return ofertas   
+            return new Promise((resolve2, reject2) => { // isso aqui simula uma lentidão por 3 segundos
+                setTimeout(() =>{ resolve2( ofertas )} ,3000)
+            })   
+        })
+        .then(( ofertas: Oferta[] ) => {
+            //terceiro then executando após 3 segundos porque estava aguardando uma promisse ser resolvida
+            return ofertas
         })
     }
 }
