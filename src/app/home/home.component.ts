@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
       
       })// retorna o resolve de ofertas.service.ts
       
-      .catch((param: any) => {console.log(param)
+      .catch((param: any) => {
+        console.log(param)
       
       
       })
