@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{ HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'; //esse é a forma mais atual para importar o modulo http
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { from } from 'rxjs';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpClientModule //importar igual ao import em cima
   ],
   providers: [],
   bootstrap: [AppComponent]
