@@ -1,0 +1,13 @@
+img {
+    border-radius: 5px;
+    width: 260px;
+    height: 200px
+}
+
+.container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+h4,h5,p{
+    right: 200px;
+}
