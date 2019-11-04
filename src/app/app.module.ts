@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; //esse é a forma mais atual para importar o modulo http
+import {RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,9 @@ import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { from } from 'rxjs';
+
+import {ROUTES} from './app.routes';
+
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { DiversaoComponent } from './diversao/diversao.component';
 
@@ -23,7 +27,8 @@ import { DiversaoComponent } from './diversao/diversao.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //importar igual ao import em cima
+    HttpClientModule, //importar igual ao import em cima
+    RouterModule.forRoot(ROUTES)//ESTABELECE AS ROTAS GLOBAIS DOS MODULOS
   ],
   providers: [],
   bootstrap: [AppComponent]
