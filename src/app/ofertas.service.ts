@@ -8,6 +8,7 @@ export class OfertasService{
     
     constructor(private http: HttpClient){}
     
+    
 public getOfertas(): Promise<Oferta[]> 
 {
     //efetuar uma requisição http
@@ -15,5 +16,10 @@ public getOfertas(): Promise<Oferta[]>
     .toPromise()  //para converter esse observable para uma promise 
     .then((resposta: any) => resposta)
     //retornar uma promise Oferta[]
+    }
+    public getOfertasPorCategoria(categoria: string) : Promise<Oferta[]> {
+        return this.http.get(`http://localhost:3000/ofertas?categorias=${categoria}`)
+            .toPromise()
+            .then((resposta:any)=>  resposta)
     }
 }
