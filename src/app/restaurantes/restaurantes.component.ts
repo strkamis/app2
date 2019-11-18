@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Oferta } from "../shared/oferta.model";
 import { OfertasService } from "../ofertas.service";
-import { filter } from 'minimatch';
 
 @Component({
   selector: 'app-restaurantes',
@@ -15,7 +14,7 @@ export class RestaurantesComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    this.ofertasService.getOfertasPorCategoria('restaurantes')//restorna uma promise
+    this.ofertasService.getOfertasPorCategoria('restaurante')//retorna uma promise
     .then(( ofertas: Oferta[] ) => { //retorna um array
       this.ofertas = ofertas
      
