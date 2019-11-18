@@ -18,8 +18,8 @@ public getOfertas(): Promise<Oferta[]>
     //retornar uma promise Oferta[]
     }
     public getOfertasPorCategoria(categoria: string) : Promise<Oferta[]> {
-        return this.http.get(`http://localhost:3000/ofertas?categorias=${categoria}`)
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
             .toPromise()
-            .then((resposta:any)=>  resposta)
+            .then((resposta: any)=>  resposta)//objeto literal
     }
 }
