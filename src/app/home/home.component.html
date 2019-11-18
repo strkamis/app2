@@ -4,6 +4,7 @@
     <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
   </div>
   <hr />
+
   <div class="row">
     <div class="col-sm-4" *ngFor="let oferta of ofertas">
       <div class="card">
@@ -12,7 +13,7 @@
           <h4 class="card-title">{{ oferta.titulo}}</h4>
           <p class="card-text">{{ oferta.descricao_oferta }}</p>
           <p class="preco">{{ oferta.valor }}</p>
-          <a href="#" class="btn btn-outline-primary">Ver oferta</a>
+          <a [routerLink]="['/oferta', oferta.id]" class="btn btn-outline-primary">Ver oferta</a>
         </div>
       </div>
     </div>
