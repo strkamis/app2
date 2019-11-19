@@ -22,4 +22,12 @@ public getOfertas(): Promise<Oferta[]>
             .toPromise()
             .then((resposta: any)=>  resposta)//objeto literal
     }
+    public getOfertasPorId(id: number): Promise<Oferta>{//vai retornar uma promise
+    return this.http.get(`http://localhost:3000/ofertas?id=${id}`)// filtra através dos atributos de cada objeto
+    .toPromise()//converte uma observable para uma promise
+    .then((resposta: any)=> { // quando estiver resolvido recebe uma resposta com base na ação
+        //o metodo .ishift ele extrai a primeira posição de um array 
+        return resposta[0]
+    })
+    }
 }
