@@ -13,9 +13,11 @@ import { Oferta } from '../shared/oferta.model';
 export class OfertaComponent implements OnInit {
 
     public oferta: Oferta
+
   constructor(
     private route: ActivatedRoute, 
-    private ofertaService: OfertasService) { }
+    private ofertaService: OfertasService
+    ) { }
      
 
   ngOnInit() {
@@ -23,8 +25,8 @@ export class OfertaComponent implements OnInit {
     //console.log('id recuperado da rota: ',this.route.snapshot.params['id'])//captura e ajusta a rota automaticamente
     this.ofertaService.getOfertasPorId(this.route.snapshot.params['id'])
     .then(( oferta: Oferta)=> {
-      console.log(oferta)
       this.oferta= oferta
+      //console.log(oferta)
     })
 
 
