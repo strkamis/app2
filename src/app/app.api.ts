@@ -1,0 +1,1 @@
+export const URL_API ='http://localhost:3000/ofertas'//o mais comum é isolar um endereço da api em outro arquivo
